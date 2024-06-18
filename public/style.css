@@ -1,0 +1,9 @@
+html {
+    overscroll-behavior: none;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
