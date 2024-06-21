@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "webpack serve",
     "build": "webpack",
-    "prepare": "husky"
+    "prepare": "husky",
+    "lint": "prettier -c src/ && eslint src/",
+    "format": "prettier -w src/"
   },
   "keywords": [],
   "author": "",
