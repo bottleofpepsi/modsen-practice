@@ -1,3 +1,6 @@
+import { filterValues, sortingValues } from '../../utils';
+import DropdownMenu from '../DropdownMenu/DropdownMenu';
+import FilterPanel from '../FilterPanel/FilterPanel';
 import './Header.css'
 import { IoIosSearch } from "react-icons/io";
 
@@ -14,6 +17,7 @@ function Header() {
             <IoIosSearch size={28}/>
           </button>
         </section>
+        <FilterPanel />
       </header>
     )
 }

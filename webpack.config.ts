@@ -14,7 +14,7 @@ const config: Configuration = {
   module: {
     rules: [
       {
-        test: /.tsx?$/,
+        test: /\.tsx?$/,
         use: "ts-loader",
         exclude: /node_modules/,
       },
@@ -23,8 +23,8 @@ const config: Configuration = {
         use: ["style-loader", "css-loader"],
       },
       { 
-        test: /\\.(png|jp(e*)g|svg|gif)$/, 
-        use: ['file-loader'],
+        test: /\.(png|jp(e*)g|svg|gif)$/, 
+        type: 'asset/resource',
       }
     ],
   },
