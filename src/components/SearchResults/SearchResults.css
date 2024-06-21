@@ -1,0 +1,13 @@
+.results {
+    width: auto;
+    padding: 10px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    column-gap: calc(width * 0, 05);
+}
+
+/* .results > * {
+    flex-basis: 20%;
+    flex-grow: 0;
+} */

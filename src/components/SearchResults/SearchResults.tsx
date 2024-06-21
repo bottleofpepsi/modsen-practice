@@ -1,10 +1,13 @@
-import './SearchResults.css'
+import "./SearchResults.css";
 
-function SearchResults() {
-    return (
-      <>
-      </>
-    )
+import React, { ReactNode } from "react";
+
+type Props = {
+    children: ReactNode;
+};
+
+function SearchResults({ children }: Props) {
+    return <main className="results">{children}</main>;
 }
 
 export default SearchResults;

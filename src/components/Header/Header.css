@@ -4,12 +4,13 @@ header {
     align-items: center;
     justify-content: center;
     gap: 30px;
-    padding: 60px 10px;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../../assets/header-bg.jpg);
+    padding: 40px 10px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url(../../assets/header-bg.jpg);
 }
 
 header h1 {
-    color: #FFFFFF;
+    color: #ffffff;
     margin: 0;
     font-size: 48px;
 }
@@ -34,7 +35,7 @@ header h1 {
     width: 40px;
     aspect-ratio: 1/1;
     border: none;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
 }
 
 .search-button:hover {
@@ -48,12 +49,12 @@ header h1 {
 .search-bar {
     display: flex;
     width: 600px;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     overflow: hidden;
     border-radius: 10px;
     transition: ease 0.5s;
 }
 
 .search-bar:focus-within {
-    box-shadow: 0px 0px 8px #FFFFFF;
+    box-shadow: 0px 0px 8px #ffffff;
 }

@@ -1,6 +1,6 @@
 .dropdown-menu {
     width: 200px;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     border-radius: 10px;
     cursor: pointer;
     font-size: 18px;
@@ -16,7 +16,7 @@
 }
 
 .dropdown-button::after {
-    content: '';
+    content: "";
     position: absolute;
     top: 50%;
     left: 50%;
@@ -40,10 +40,21 @@
     margin: 0;
     background-color: inherit;
     border-radius: 0 0 10px 10px;
-    list-style: none; 
+    list-style: none;
     z-index: 2;
 }
 
 .dropdown-list > *:not(:first-child) {
     border-top: 2px solid #b0b0b0;
+}
+
+.dropdown-item {
+    height: 40px;
+    text-align: start;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-item > span {
+    padding-left: 5px;
 }
