@@ -3,7 +3,7 @@ import "./FilterPanel.css";
 import React from "react";
 
 import { filterValues, sortingValues } from "../../utils";
-import DropdownMenu from "../DropdownMenu/DropdownMenu";
+import DropdownMenu from "../DropdownMenu";
 
 function FilterPanel() {
     return (

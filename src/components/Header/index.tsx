@@ -3,7 +3,7 @@ import "./Header.css";
 import React from "react";
 import { IoIosSearch } from "react-icons/io";
 
-import FilterPanel from "../FilterPanel/FilterPanel";
+import FilterPanel from "../FilterPanel";
 
 function Header() {
     return (
