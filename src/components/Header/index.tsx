@@ -1,4 +1,4 @@
-import "./Header.css";
+import "./style.css";
 
 import React from "react";
 import { IoIosSearch } from "react-icons/io";
