@@ -3,17 +3,17 @@ import "./style.css";
 import React, { useState } from "react";
 import { FaAngleDown, FaAngleUp } from "react-icons/fa6";
 
-type Props = {
-    items: ListItem[];
-};
+import useVisible from "../../hooks/useVisible";
 
-type ListItem = {
-    id: number;
-    value: string;
+type Props = {
+    items: {
+        id: number;
+        value: string;
+    }[];
 };
 
 function DropdownMenu({ items }: Props) {
-    const [visible, setVisible] = useState(false);
+    const [ref, visible, setVisible] = useVisible<HTMLDivElement>(false);
     const [value, setValue] = useState(items[0].value);
 
     const chooseItem = (name: string) => {
@@ -22,7 +22,7 @@ function DropdownMenu({ items }: Props) {
     };
 
     return (
-        <div className="dropdown-menu">
+        <div ref={ref} className="dropdown-menu">
             <div
                 className="dropdown-button"
                 onClick={() => setVisible(!visible)}
