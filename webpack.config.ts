@@ -1,6 +1,6 @@
+import CopyWebpackPlugin from "copy-webpack-plugin";
 import path from "path";
 import { Configuration } from "webpack";
-import CopyWebpackPlugin from "copy-webpack-plugin";
 
 const config: Configuration = {
   entry: "./src/main.tsx",
@@ -24,7 +24,7 @@ const config: Configuration = {
       },
       { 
         test: /\.(png|jp(e*)g|svg|gif)$/, 
-        type: 'asset/resource',
+        type: "asset/resource",
       }
     ],
   },
