@@ -8,8 +8,8 @@ import DropdownMenu from "../DropdownMenu";
 function FilterPanel() {
     return (
         <aside className="filter-panel">
-            <DropdownMenu items={filterValues} />
             <DropdownMenu items={sortingValues} />
+            <DropdownMenu items={filterValues} />
         </aside>
     );
 }
