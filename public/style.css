@@ -1,3 +1,53 @@
+@font-face {
+    font-family: "Inter";
+    src: url(./fonts/Inter-Regular.ttf) format("truetype");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url(./fonts/Inter-Medium.ttf) format("truetype");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url(./fonts/Inter-SemiBold.ttf) format("truetype");
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: url(./fonts/Montserrat-Regular.ttf) format("truetype");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: url(./fonts/Montserrat-Medium.ttf) format("truetype");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: url(./fonts/Montserrat-MediumItalic.ttf) format("truetype");
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: url(./fonts/Montserrat-Bold.ttf) format("truetype");
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: url(./fonts/Montserrat-BoldItalic.ttf) format("truetype");
+    font-weight: 700;
+    font-style: italic;
+}
+
 html {
     overscroll-behavior: none;
     scroll-behavior: smooth;
