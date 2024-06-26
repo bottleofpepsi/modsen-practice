@@ -2,7 +2,7 @@ import "./style.css";
 
 import React from "react";
 
-import { filterValues, sortingValues } from "../../utils";
+import { filterValues, sortingValues } from "../../constants";
 import DropdownMenu from "../DropdownMenu";
 
 function FilterPanel() {
