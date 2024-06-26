@@ -55,7 +55,7 @@ module.exports = () => {
         patterns: [{ from: "public" }],
       }),
       new Dotenv({
-        path: ".env"
+        path: "dist/.env"
       })
     ],
   };
