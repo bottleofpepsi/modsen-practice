@@ -1,0 +1,11 @@
+.filter-panel {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 20px;
+}
+
+@media (max-width: 500px) {
+    .filter-panel {
+        flex-direction: column-reverse;
+    }
+}

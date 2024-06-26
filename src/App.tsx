@@ -1,16 +1,29 @@
-import DropdownElement from "./components/DropdownMenu/DropdownElement";
-import DropdownMenu from "./components/DropdownMenu/DropdownMenu";
-import Header from "./components/Header/Header";
+import React from "react";
+
+import BookCard from "./components/BookCard";
+import Header from "./components/Header";
+import SearchResults from "./components/SearchResults";
 
 function App() {
-  return (
-    <>
-      <Header />
-      {/* <DropdownMenu>
-        <DropdownElement />
-      </DropdownMenu> */}
-    </>
-  );
+    return (
+        <>
+            <Header />
+            <SearchResults>
+                <BookCard />
+                <BookCard />
+                <BookCard />
+                <BookCard />
+                <BookCard />
+                <BookCard />
+                <BookCard />
+                <BookCard />
+                <BookCard />
+                <BookCard />
+                <BookCard />
+                <BookCard />
+            </SearchResults>
+        </>
+    );
 }
 
 export default App;

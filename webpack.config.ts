@@ -1,6 +1,17 @@
-import path from "path";
-import { Configuration } from "webpack";
 import CopyWebpackPlugin from "copy-webpack-plugin";
+import dotenv from "dotenv";
+import path from "path";
+import { Configuration, DefinePlugin } from "webpack";
+
+type envObject = {
+  [key: string]: string,
+}
+
+const env = dotenv.config().parsed;
+const envKeys = Object.keys(env as envObject).reduce((prev: envObject, next: string) => {
+  prev[`process.env.${next}`] = JSON.stringify((env as envObject)[next]);
+  return prev;
+}, {});
 
 const config: Configuration = {
   entry: "./src/main.tsx",
@@ -14,7 +25,7 @@ const config: Configuration = {
   module: {
     rules: [
       {
-        test: /.tsx?$/,
+        test: /\.tsx?$/,
         use: "ts-loader",
         exclude: /node_modules/,
       },
@@ -23,8 +34,8 @@ const config: Configuration = {
         use: ["style-loader", "css-loader"],
       },
       { 
-        test: /\\.(png|jp(e*)g|svg|gif)$/, 
-        use: ['file-loader'],
+        test: /\.(png|jp(e*)g|svg|gif)$/, 
+        type: "asset/resource",
       }
     ],
   },
@@ -35,6 +46,7 @@ const config: Configuration = {
     new CopyWebpackPlugin({
       patterns: [{ from: "public" }],
     }),
+    new DefinePlugin(envKeys)
   ],
 };
 

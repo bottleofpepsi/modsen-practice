@@ -1,8 +1,9 @@
-import globals from "globals";
-import pluginJs from "@eslint/js";
-import tseslint from "typescript-eslint";
-import pluginReactConfig from "eslint-plugin-react/configs/recommended.js";
 import { fixupConfigRules } from "@eslint/compat";
+import pluginJs from "@eslint/js";
+import pluginReactConfig from "eslint-plugin-react/configs/recommended.js";
+import simpleImportSort from "eslint-plugin-simple-import-sort";
+import globals from "globals";
+import tseslint from "typescript-eslint";
 
 export default [
     {
@@ -23,7 +24,7 @@ export default [
         rules: {
             eqeqeq: "warn",
             "no-unused-vars": "error",
-            "no-console": "error",
+            "no-console": "warn",
             "prefer-const": [
                 "error",
                 {
@@ -33,6 +34,15 @@ export default [
             "@typescript-eslint/quotes": "error",
             quotes: "error"
         }
+    },
+    {
+        plugins: {
+          "simple-import-sort": simpleImportSort,
+        },
+        rules: {
+          "simple-import-sort/imports": "warn",
+          "simple-import-sort/exports": "warn",
+        },
     },
     pluginJs.configs.recommended,
     ...tseslint.configs.recommended,
