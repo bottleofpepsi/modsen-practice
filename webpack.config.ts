@@ -1,5 +1,6 @@
 import CopyWebpackPlugin from "copy-webpack-plugin";
 import dotenv from "dotenv";
+import * as fs from "fs";
 import path from "path";
 import { Configuration, DefinePlugin } from "webpack";
 
@@ -7,9 +8,14 @@ type envObject = {
   [key: string]: string,
 }
 
-const env = dotenv.config().parsed;
-const envKeys = Object.keys(env as envObject).reduce((prev: envObject, next: string) => {
-  prev[`process.env.${next}`] = JSON.stringify((env as envObject)[next]);
+const currentPath = path.join(__dirname);
+const basePath = currentPath + "/.env";
+const envPath = basePath + "." + process.env.ENVIRONMENT;
+const finalPath = fs.existsSync(envPath) ? envPath : basePath;
+
+const fileEnv = dotenv.config({ path: finalPath }).parsed;
+const envKeys = Object.keys(fileEnv as envObject).reduce((prev: envObject, next: string) => {
+  prev[`process.env.${next}`] = JSON.stringify((fileEnv as envObject)[next]);
   return prev;
 }, {});
 
