@@ -37,9 +37,7 @@ module.exports = () => {
       new CopyWebpackPlugin({
         patterns: [{ from: "public" }],
       }),
-      new Dotenv({
-        path: ".env"
-      })
+      new Dotenv()
     ],
   };
 
