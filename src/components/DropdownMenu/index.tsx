@@ -8,16 +8,17 @@ import useVisible from "../../hooks/useVisible";
 type Props = {
     items: {
         id: number;
+        name: string;
         value: string;
     }[];
 };
 
 function DropdownMenu({ items }: Props) {
     const [ref, visible, setVisible] = useVisible<HTMLDivElement>(false);
-    const [value, setValue] = useState(items[0].value);
+    const [name, setName] = useState(items[0].name);
 
-    const chooseItem = (name: string) => {
-        setValue(name);
+    const chooseItem = (itemName: string) => {
+        setName(itemName);
         setVisible(false);
     };
 
@@ -27,14 +28,14 @@ function DropdownMenu({ items }: Props) {
                 className="dropdown-button"
                 onClick={() => setVisible(!visible)}
             >
-                <span className="dropdown-text">{value}</span>
+                <span className="dropdown-text">{name}</span>
                 {visible ? <FaAngleUp /> : <FaAngleDown />}
             </div>
             <ul className={`dropdown-list ${visible ? "" : "hidden"}`}>
                 {items.map((item) => (
                     <DropdownItem
                         key={item.id}
-                        name={item.value}
+                        name={item.name}
                         callback={chooseItem}
                     />
                 ))}

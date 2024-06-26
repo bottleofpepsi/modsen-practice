@@ -17,7 +17,7 @@ function Header() {
                     placeholder="Search for books, authors, etc."
                 />
                 <button
-                    onClick={() => searchBooks("js")}
+                    onClick={() => searchBooks("js", "computers", "relevance")}
                     className="search-button"
                 >
                     <IoIosSearch size={28} />

@@ -1,14 +1,14 @@
 export const sortingValues = [
-    { id: 0, value: "Relevant" },
-    { id: 1, value: "Newest" },
+    { id: 0, name: "Relevant", value: "relevance" },
+    { id: 1, name: "Newest", value: "newest" },
 ];
 
 export const filterValues = [
-    { id: 0, value: "All" },
-    { id: 1, value: "Art" },
-    { id: 2, value: "Biography" },
-    { id: 3, value: "Computers" },
-    { id: 4, value: "History" },
-    { id: 5, value: "Medical" },
-    { id: 6, value: "Poetry" },
+    { id: 0, name: "All", value: "all" },
+    { id: 1, name: "Art", value: "art" },
+    { id: 2, name: "Biography", value: "biography" },
+    { id: 3, name: "Computers", value: "computers" },
+    { id: 4, name: "History", value: "history" },
+    { id: 5, name: "Medical", value: "medical" },
+    { id: 6, name: "Poetry", value: "poetry" },
 ];
