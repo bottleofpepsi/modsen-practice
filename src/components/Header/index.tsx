@@ -3,6 +3,7 @@ import "./style.css";
 import React from "react";
 import { IoIosSearch } from "react-icons/io";
 
+import { searchBooks } from "../../api";
 import FilterPanel from "../FilterPanel";
 
 function Header() {
@@ -15,7 +16,10 @@ function Header() {
                     type="search"
                     placeholder="Search for books, authors, etc."
                 />
-                <button className="search-button">
+                <button
+                    onClick={() => searchBooks("js")}
+                    className="search-button"
+                >
                     <IoIosSearch size={28} />
                 </button>
             </section>
