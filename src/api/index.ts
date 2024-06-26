@@ -9,5 +9,10 @@ export async function searchBooks(query: string) {
 }
 
 export async function getBookInfo(id: string) {
-    return id;
+    const API_URL = process.env.API_URL;
+
+    const responce = await fetch(`${API_URL}/${id}`);
+    responce.json().then((data) => {
+        console.log(data);
+    });
 }
