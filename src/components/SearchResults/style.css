@@ -1,8 +1,8 @@
 .results {
     display: grid;
+    grid-template-columns: repeat(auto-fit, 200px);
     justify-content: center;
     gap: 20px 30px;
-    grid-template-columns: repeat(auto-fit, 200px);
-    width: auto;
     padding: 10px 20px;
+    width: auto;
 }

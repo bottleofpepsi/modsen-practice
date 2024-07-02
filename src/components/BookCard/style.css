@@ -2,12 +2,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    overflow: hidden;
-    width: 200px;
-    height: 350px;
-    background-color: #d4d2bd;
     cursor: pointer;
     border-radius: 10px;
+    background-color: #d4d2bd;
+    width: 200px;
+    height: 350px;
+    overflow: hidden;
 }
 
 /* TODO: add media query for small screens */
@@ -27,16 +27,16 @@
 .book-info {
     display: inherit;
     flex-direction: column;
+    padding: 10px;
     width: 180px;
     height: 80px;
-    padding: 10px;
 }
 
 .book-name,
 .book-authors,
 .book-category {
-    overflow: hidden;
     margin: 0;
+    overflow: hidden;
     font-family: "Montserrat", sans-serif;
     text-overflow: ellipsis;
 }
@@ -49,17 +49,17 @@
 
 .book-name {
     max-height: 2lh;
-    font-size: 16px;
     font-weight: 700;
+    font-size: 16px;
 }
 
 .book-authors {
-    font-size: 14px;
     font-weight: 500;
+    font-size: 14px;
 }
 
 .book-category {
-    font-size: 13px;
     font-style: italic;
     font-weight: 300;
+    font-size: 13px;
 }

@@ -4,28 +4,28 @@ header {
     justify-content: center;
     align-items: center;
     gap: 30px;
-    padding: 40px 10px;
     background: linear-gradient(#000000b2, #000000b2),
         url(../../assets/header-bg.jpg);
     background-position: 40%;
+    padding: 40px 10px;
 }
 
 header h1 {
     margin: 0;
+    color: #ffffff;
+    font-weight: 900;
     font-size: 48px;
     font-family: "Montserrat";
-    font-weight: 900;
-    color: #ffffff;
 }
 
 .search-field {
     flex-grow: 1;
-    height: 40px;
-    padding: 0 10px;
     border: none;
+    padding: 0 10px;
+    height: 40px;
+    font-weight: 500;
     font-size: 16px;
     font-family: "Montserrat";
-    font-weight: 500;
 }
 
 .search-field:focus {
@@ -33,14 +33,14 @@ header h1 {
 }
 
 .search-button {
-    aspect-ratio: 1/1;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 40px;
-    padding-right: 10px;
-    background-color: #ffffff;
     border: none;
+    background-color: #ffffff;
+    padding-right: 10px;
+    aspect-ratio: 1/1;
+    width: 40px;
 }
 
 .search-button:hover {
@@ -53,11 +53,11 @@ header h1 {
 
 .search-bar {
     display: flex;
-    overflow: hidden;
-    width: clamp(350px, 70%, 600px);
     transition: ease 0.5s;
-    background-color: #ffffff;
     border-radius: 10px;
+    background-color: #ffffff;
+    width: clamp(350px, 70%, 600px);
+    overflow: hidden;
 }
 
 .search-bar:focus-within {
