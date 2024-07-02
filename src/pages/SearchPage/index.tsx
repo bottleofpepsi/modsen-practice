@@ -1,4 +1,7 @@
+import "./style.css";
+
 import React, { createContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 import { fetchBooksByQuery } from "../../api";
 import BookCard from "../../components/BookCard";
@@ -66,10 +69,13 @@ function SearchPage() {
             <BookCountContext.Provider value={booksFound}>
                 <SearchResults>
                     {results.map((book) => (
-                        <BookCard
-                            bookInfo={book}
+                        <Link
+                            className="book-link"
+                            to={`/${book.id}`}
                             key={book.id + book.title + book.authors}
-                        />
+                        >
+                            <BookCard bookInfo={book} />
+                        </Link>
                     ))}
                 </SearchResults>
             </BookCountContext.Provider>
