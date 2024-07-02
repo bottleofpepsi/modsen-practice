@@ -7,26 +7,7 @@ import LoadingIndicator from "../../components/LoadingIndicator";
 import LoadMoreButton from "../../components/LoadMoreButton";
 import SearchResults from "../../components/SearchResults";
 import { PAGINATION_STEP } from "../../constants";
-
-type SearchParams = {
-    query: string;
-    category: string;
-    sorting: string;
-    startIndex: number;
-};
-
-type Book = {
-    id: string;
-    title: string;
-    authors: string[] | undefined;
-    category: string | undefined;
-    thumbnailLink: string | undefined;
-};
-
-type Books = {
-    total: number;
-    books: Book[];
-};
+import { Book, Books, SearchParams } from "../../types";
 
 export const BookCountContext = createContext(0);
 export const SetIndexContext = createContext(() => {});
