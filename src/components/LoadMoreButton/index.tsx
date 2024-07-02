@@ -3,18 +3,7 @@ import "./style.css";
 import React from "react";
 
 import { PAGINATION_STEP } from "../../constants";
-
-type SearchParams = {
-    query: string;
-    category: string;
-    sorting: string;
-    startIndex: number;
-};
-
-type Props = {
-    params: SearchParams;
-    setParams: (arg: SearchParams) => void;
-};
+import { Props } from "./types";
 
 function LoadMoreButton({ params, setParams }: Props) {
     const paginate = () => {

@@ -5,18 +5,7 @@ import { IoIosSearch } from "react-icons/io";
 
 import { filterValues, sortingValues } from "../../constants";
 import DropdownMenu from "../DropdownMenu";
-
-type SearchParams = {
-    query: string;
-    category: string;
-    sorting: string;
-    startIndex: number;
-};
-
-type Props = {
-    params: SearchParams;
-    setParams: (arg: SearchParams) => void;
-};
+import { Props } from "./types";
 
 function Header({ params, setParams }: Props) {
     const newParams = { ...params };

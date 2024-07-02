@@ -1,28 +1,8 @@
-type Book = {
-    id: string;
-    title: string;
-    authors: string[] | undefined;
-    category: string | undefined;
-    thumbnailLink: string | undefined;
-};
-
-type Books = {
-    total: number;
-    books: Book[];
-};
-
-interface DetailedBook extends Book {}
+import { Books, DetailedBook, SearchParams } from "../types";
 
 interface Keyable {
     [key: string]: Keyable;
 }
-
-type SearchParams = {
-    query: string;
-    category: string;
-    sorting: string;
-    startIndex: number;
-};
 
 function processQuery(params: SearchParams): string {
     const API_KEY = process.env.API_KEY;

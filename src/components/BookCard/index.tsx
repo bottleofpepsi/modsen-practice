@@ -3,18 +3,7 @@ import "./style.css";
 import React from "react";
 
 import placeholder from "../../assets/placeholder.jpg";
-
-type Book = {
-    id: string;
-    title: string;
-    authors: string[] | undefined;
-    category: string | undefined;
-    thumbnailLink: string | undefined;
-};
-
-type Props = {
-    bookInfo: Book;
-};
+import { Props } from "./types";
 
 function BookCard({ bookInfo }: Props) {
     const processedAutors = bookInfo.authors?.join(", ");

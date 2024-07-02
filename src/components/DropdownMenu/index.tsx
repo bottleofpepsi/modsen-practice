@@ -4,17 +4,8 @@ import React, { useState } from "react";
 import { FaAngleDown, FaAngleUp } from "react-icons/fa6";
 
 import useVisible from "../../hooks/useVisible";
-
-type Props = {
-    setParameter: (arg: string) => void;
-    items: MenuItem[];
-};
-
-type MenuItem = {
-    id: number;
-    name: string;
-    value: string;
-};
+import DropdownItem from "./DropdownItem";
+import { Props } from "./types";
 
 function DropdownMenu({ setParameter, items }: Props) {
     const [ref, visible, setVisible] = useVisible<HTMLDivElement>(false);
@@ -45,22 +36,6 @@ function DropdownMenu({ setParameter, items }: Props) {
                 ))}
             </ul>
         </div>
-    );
-}
-
-type ItemProps = {
-    itemDetails: MenuItem;
-    onItemClicked: (arg1: string, arg2: string) => void;
-};
-
-function DropdownItem({ itemDetails, onItemClicked }: ItemProps) {
-    return (
-        <li
-            className="dropdown-item"
-            onClick={() => onItemClicked(itemDetails.name, itemDetails.value)}
-        >
-            <span>{itemDetails.name}</span>
-        </li>
     );
 }
 

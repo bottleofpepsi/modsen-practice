@@ -1,0 +1,19 @@
+.dropdown-item:not(:first-child) {
+    border-top: 2px solid #b0b0b0;
+}
+
+.dropdown-item {
+    padding: 5px 0;
+}
+
+.dropdown-item > span {
+    display: flex;
+    align-items: center;
+    height: 30px;
+    padding-left: 10px;
+    border-radius: 15px;
+}
+
+.dropdown-item:hover > span {
+    background-color: #e0e0e0;
+}
