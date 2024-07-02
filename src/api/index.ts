@@ -1,35 +1,83 @@
-export async function searchBooks(
-    query: string,
-    category: string,
-    sorting: string
-) {
-    const url = processQuery(query, category, sorting);
-    const response = await fetch(url);
+type Book = {
+    id: string;
+    title: string;
+    authors: string[] | undefined;
+    category: string | undefined;
+    thumbnailLink: string | undefined;
+};
 
-    const data = await response.json();
-    console.log(data);
+type Books = {
+    total: number;
+    books: Book[];
+};
+
+interface DetailedBook extends Book {}
+
+interface Keyable {
+    [key: string]: Keyable;
 }
 
-export async function getBookInfo(id: string) {
-    const API_URL = process.env.API_URL;
+type SearchParams = {
+    query: string;
+    category: string;
+    sorting: string;
+    startIndex: number;
+};
 
-    const response = await fetch(`${API_URL}/${id}`);
-
-    const data = await response.json();
-    console.log(data);
-}
-
-function processQuery(
-    query: string,
-    category: string,
-    sorting: string
-): string {
+function processQuery(params: SearchParams): string {
     const API_KEY = process.env.API_KEY;
     const API_URL = process.env.API_URL;
 
     return (
-        `${API_URL}?q=${query.trim().replace(/\s/g, "+")}` +
-        `${category !== "all" && `+subject:${category}`}` +
-        `+&orderBy=${sorting}&key=${API_KEY}`
+        `${API_URL}?q=${params.query.trim().replace(/\s/g, "+")}` +
+        `${params.category !== "all" ? `+subject:${params.category}` : ""}` +
+        `&orderBy=${params.sorting}&startIndex=${params.startIndex}&maxResults=${30}` +
+        `&key=${API_KEY}`
     );
+}
+
+export async function fetchBooksByQuery(params: SearchParams) {
+    const url = processQuery(params);
+    const response = await fetch(url);
+    if (!response.ok) {
+        throw new Error("Failed to fetch books!");
+    }
+
+    const rawData = response.json();
+
+    return rawData.then((data) => {
+        const processedData = {} as Books;
+
+        processedData.total = data.totalItems;
+        processedData.books =
+            data.items?.map((book: Keyable) => ({
+                id: book.id,
+                title: book.volumeInfo.title,
+                authors: book.volumeInfo.authors,
+                category: book.volumeInfo.categories?.[0],
+                thumbnailLink: book.volumeInfo.imageLinks?.thumbnail,
+            })) || [];
+
+        return new Promise<Books>((resolve) => resolve(processedData));
+    });
+}
+
+export async function fetchBookById(id: string) {
+    const API_URL = process.env.API_URL;
+
+    const response = await fetch(`${API_URL}/${id}`);
+    const rawData = response.json();
+
+    return rawData.then((data) => {
+        // TODO: ISBN, large thumbnail, description, etc.
+        const processedData: DetailedBook = {
+            id: data.id,
+            title: data.volumeInfo.title,
+            authors: data.volumeInfo.authors,
+            category: data.volumeInfo.categories[0],
+            thumbnailLink: data.volumeInfo.imageLinks.thumbnail,
+        };
+
+        return new Promise((resolve) => resolve(processedData));
+    });
 }

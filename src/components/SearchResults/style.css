@@ -1,23 +1,17 @@
 .results {
-    width: auto;
-    padding: 10px 20px;
     display: grid;
     justify-content: center;
-    grid-template-columns: repeat(auto-fit, 250px);
     gap: 20px 30px;
+    grid-template-columns: repeat(auto-fit, 200px);
+    width: auto;
+    padding: 10px 20px;
 }
 
-/* @media (max-width: 1000px) {
-    .results {
-        grid-template-columns: repeat(auto-fit, 200px);
-    }
-} */
-
 .result-count {
-    padding: 10px;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    padding: 15px;
 }
 
 .result-count-text {

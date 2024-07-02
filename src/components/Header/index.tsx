@@ -1,12 +1,36 @@
 import "./style.css";
 
-import React from "react";
+import React, { KeyboardEvent } from "react";
 import { IoIosSearch } from "react-icons/io";
 
-import { searchBooks } from "../../api";
-import FilterPanel from "../FilterPanel";
+import { filterValues, sortingValues } from "../../constants";
+import DropdownMenu from "../DropdownMenu";
 
-function Header() {
+type SearchParams = {
+    query: string;
+    category: string;
+    sorting: string;
+    startIndex: number;
+};
+
+type Props = {
+    params: SearchParams;
+    setParams: (arg: SearchParams) => void;
+};
+
+function Header({ params, setParams }: Props) {
+    const newParams = { ...params };
+
+    const sendSearchParams = () => {
+        newParams.startIndex = 0;
+        setParams(newParams);
+    };
+    const enterPressed = (event: KeyboardEvent<HTMLInputElement>) => {
+        if (event.key === "Enter") {
+            sendSearchParams();
+        }
+    };
+
     return (
         <header>
             <h1>Book Finder</h1>
@@ -15,15 +39,27 @@ function Header() {
                     className="search-field"
                     type="search"
                     placeholder="Search for books, authors, etc."
+                    onChange={(event) => (newParams.query = event.target.value)}
+                    onKeyDown={enterPressed}
                 />
-                <button
-                    onClick={() => searchBooks("js", "computers", "relevance")}
-                    className="search-button"
-                >
+                <button onClick={sendSearchParams} className="search-button">
                     <IoIosSearch size={28} />
                 </button>
             </section>
-            <FilterPanel />
+            <aside className="filter-panel">
+                <DropdownMenu
+                    setParameter={(value: string) =>
+                        (newParams.sorting = value)
+                    }
+                    items={sortingValues}
+                />
+                <DropdownMenu
+                    setParameter={(value: string) =>
+                        (newParams.category = value)
+                    }
+                    items={filterValues}
+                />
+            </aside>
         </header>
     );
 }

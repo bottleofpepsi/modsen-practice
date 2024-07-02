@@ -1,6 +1,8 @@
 import "./style.css";
 
-import React, { ReactNode, useState } from "react";
+import React, { ReactNode, useContext } from "react";
+
+import { BookCountContext } from "../../pages/SearchPage";
 
 type Props = {
     children: ReactNode;
@@ -16,7 +18,7 @@ function SearchResults({ children }: Props) {
 }
 
 function ResultCount() {
-    const [count] = useState(0);
+    const count = useContext(BookCountContext);
 
     return (
         <section className="result-count">
