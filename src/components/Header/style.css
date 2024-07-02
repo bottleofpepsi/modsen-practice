@@ -5,7 +5,7 @@ header {
     align-items: center;
     gap: 30px;
     padding: 40px 10px;
-    background-image: linear-gradient(#000000b2, #000000b2),;
+    background-image: linear-gradient(#000000b2, #000000b2);
     background-position: 40%;
 }
 

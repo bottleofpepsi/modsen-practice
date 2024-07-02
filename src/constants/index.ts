@@ -12,3 +12,5 @@ export const filterValues = [
     { id: 5, name: "Medical", value: "medical" },
     { id: 6, name: "Poetry", value: "poetry" },
 ];
+
+export const PAGINATION_STEP = 30;
