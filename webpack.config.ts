@@ -1,3 +1,5 @@
+import "webpack-dev-server";
+
 import CopyWebpackPlugin from "copy-webpack-plugin";
 import Dotenv from "dotenv-webpack";
 import path from "path";
@@ -8,6 +10,7 @@ const config: Configuration = {
   output: {
     filename: "bundle.js",
     path: path.resolve(__dirname, "dist"),
+    publicPath: "/"
   },
   resolve: {
     extensions: [".tsx", ".ts", ".js"],
@@ -32,6 +35,9 @@ const config: Configuration = {
   mode:
     (process.env.NODE_ENV as "production" | "development" | undefined) ??
     "development",
+  devServer: {
+      historyApiFallback: true,
+  },
   plugins: [
     new CopyWebpackPlugin({
       patterns: [{ from: "public" }],
