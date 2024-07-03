@@ -47,6 +47,9 @@ export async function fetchBookById(id: string | undefined) {
 
     const response = await fetch(`${API_URL}/${id}`);
     const rawData = response.json();
+    if (!response.ok) {
+        throw new Error("Failed to fetch book details!");
+    }
 
     return rawData.then((data) => {
         const processedData: DetailedBook = {
@@ -54,11 +57,13 @@ export async function fetchBookById(id: string | undefined) {
             title: data.volumeInfo.title,
             authors: data.volumeInfo.authors,
             category: data.volumeInfo.categories?.[0],
-            thumbnailLink: data.volumeInfo.imageLinks?.extraLarge,
+            thumbnailLink: data.volumeInfo.imageLinks?.thumbnail,
+            mediumImageLink: data.volumeInfo.imageLinks?.medium,
+            largeImageLink: data.volumeInfo.imageLinks?.extraLarge,
             description: data.volumeInfo.description,
             publisher: data.volumeInfo.publisher,
             publishedDate: data.volumeInfo.publishedDate,
-            isbn: data.volumeInfo.industryIdentifiers[1].identifier,
+            isbn: data.volumeInfo.industryIdentifiers?.[1]?.identifier,
             allCategories: data.volumeInfo.categories,
             pageCount: data.volumeInfo.pageCount,
         };
