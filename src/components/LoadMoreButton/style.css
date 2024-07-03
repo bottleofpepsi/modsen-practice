@@ -3,19 +3,3 @@
     justify-content: center;
     padding: 20px;
 }
-
-.load-more-button {
-    border: 1px solid #505050;
-    border-radius: 10px;
-    background-color: #ffffff;
-    width: 150px;
-    height: 40px;
-    font-weight: 500;
-    font-size: 20px;
-    font-family: "Montserrat", sans-serif;
-}
-
-.load-more-button:hover {
-    cursor: pointer;
-    background-color: #d0d0d0;
-}

@@ -3,6 +3,7 @@ import "./style.css";
 import React from "react";
 
 import { PAGINATION_STEP } from "../../constants";
+import Button from "../Button";
 import { Props } from "./types";
 
 function LoadMoreButton({ params, setParams }: Props) {
@@ -14,9 +15,7 @@ function LoadMoreButton({ params, setParams }: Props) {
 
     return (
         <div className="load-more">
-            <button className="load-more-button" onClick={paginate}>
-                Load More
-            </button>
+            <Button onClick={paginate}>Load More</Button>
         </div>
     );
 }
