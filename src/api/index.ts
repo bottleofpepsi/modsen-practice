@@ -42,22 +42,27 @@ export async function fetchBooksByQuery(params: SearchParams) {
     });
 }
 
-export async function fetchBookById(id: string) {
+export async function fetchBookById(id: string | undefined) {
     const API_URL = process.env.API_URL;
 
     const response = await fetch(`${API_URL}/${id}`);
     const rawData = response.json();
 
     return rawData.then((data) => {
-        // TODO: ISBN, large thumbnail, description, etc.
         const processedData: DetailedBook = {
             id: data.id,
             title: data.volumeInfo.title,
             authors: data.volumeInfo.authors,
-            category: data.volumeInfo.categories[0],
-            thumbnailLink: data.volumeInfo.imageLinks.thumbnail,
+            category: data.volumeInfo.categories?.[0],
+            thumbnailLink: data.volumeInfo.imageLinks?.extraLarge,
+            description: data.volumeInfo.description,
+            publisher: data.volumeInfo.publisher,
+            publishedDate: data.volumeInfo.publishedDate,
+            isbn: data.volumeInfo.industryIdentifiers[1].identifier,
+            allCategories: data.volumeInfo.categories,
+            pageCount: data.volumeInfo.pageCount,
         };
 
-        return new Promise((resolve) => resolve(processedData));
+        return new Promise<DetailedBook>((resolve) => resolve(processedData));
     });
 }
