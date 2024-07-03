@@ -15,11 +15,13 @@ export type Book = {
 
 export interface DetailedBook extends Book {
     description: string;
-    publisher: string;
-    publishedDate: string;
-    isbn: string;
+    publisher: string | undefined;
+    publishedDate: string | undefined;
+    isbn: string | undefined;
     allCategories: string[];
-    pageCount: number;
+    pageCount: number | undefined;
+    mediumImageLink: string | undefined;
+    largeImageLink: string | undefined;
 }
 
 export type Books = {
