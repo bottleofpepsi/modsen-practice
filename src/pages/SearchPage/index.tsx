@@ -11,6 +11,7 @@ import LoadMoreButton from "../../components/LoadMoreButton";
 import SearchResults from "../../components/SearchResults";
 import { PAGINATION_STEP } from "../../constants";
 import { Book, Books, SearchParams } from "../../types";
+import { filterBooks } from "../../utils";
 
 export const BookCountContext = createContext(0);
 export const SetIndexContext = createContext(() => {});
@@ -29,17 +30,6 @@ function SearchPage() {
     const [error, setError] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
 
-    const removeDuplicates = (books: Book[]): Book[] => {
-        const uniqueIds: string[] = [];
-        return books.filter((book) => {
-            if (uniqueIds.includes(book.id)) {
-                return false;
-            }
-            uniqueIds.push(book.id);
-            return true;
-        });
-    };
-
     if (error) {
         throw new Error();
     }
@@ -51,7 +41,7 @@ function SearchPage() {
         }
         fetchBooksByQuery(searchParams)
             .then((data: Books) => {
-                const books = removeDuplicates(data.books);
+                const books = filterBooks(data.books);
                 if (!searchParams.startIndex) {
                     setResults(books);
                     setBooksFound(data.total);
