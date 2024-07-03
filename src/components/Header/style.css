@@ -1,4 +1,4 @@
-header {
+.search-header {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -10,7 +10,7 @@ header {
     padding: 40px 10px;
 }
 
-header h1 {
+.search-header h1 {
     margin: 0;
     color: #ffffff;
     font-weight: 900;

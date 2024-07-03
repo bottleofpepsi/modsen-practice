@@ -13,7 +13,16 @@ export type Book = {
     thumbnailLink: string | undefined;
 };
 
-export interface DetailedBook extends Book {}
+export interface DetailedBook extends Book {
+    description: string;
+    publisher: string | undefined;
+    publishedDate: string | undefined;
+    isbn: string | undefined;
+    allCategories: string[];
+    pageCount: number | undefined;
+    mediumImageLink: string | undefined;
+    largeImageLink: string | undefined;
+}
 
 export type Books = {
     total: number;

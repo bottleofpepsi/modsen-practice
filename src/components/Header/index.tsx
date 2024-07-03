@@ -21,7 +21,7 @@ function Header({ params, setParams }: Props) {
     };
 
     return (
-        <header>
+        <header className="search-header">
             <h1>Book Finder</h1>
             <section className="search-bar">
                 <input
