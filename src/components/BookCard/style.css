@@ -1,22 +1,16 @@
 .book-card {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    cursor: pointer;
     border-radius: 10px;
-    overflow: hidden;
     background-color: #d4d2bd;
-    width: 250px;
+    width: 200px;
+    height: 350px;
+    overflow: hidden;
 }
 
-/* @media (max-width: 1000px) {
-    .book-card {
-        width: 200px;
-    }
-
-    .book-card > img {
-        width: 200px;
-        height: 200px;
-    }
-} */
+/* TODO: add media query for small screens */
 
 @media (hover: hover) {
     .book-card:hover {
@@ -34,32 +28,38 @@
     display: inherit;
     flex-direction: column;
     padding: 10px;
+    width: 180px;
+    height: 80px;
 }
 
 .book-name,
 .book-authors,
 .book-category {
     margin: 0;
-}
-
-.book-name {
+    overflow: hidden;
     font-family: "Montserrat", sans-serif;
-    font-size: 22px;
-    font-weight: 700;
+    text-overflow: ellipsis;
 }
 
 .book-authors,
 .book-category {
-    font-family: "Montserrat", sans-serif;
+    max-height: 1lh;
+    white-space: nowrap;
+}
+
+.book-name {
+    max-height: 2lh;
+    font-weight: 700;
+    font-size: 16px;
 }
 
 .book-authors {
-    font-size: 16px;
     font-weight: 500;
+    font-size: 14px;
 }
 
 .book-category {
     font-style: italic;
-    font-size: 13px;
     font-weight: 300;
+    font-size: 13px;
 }

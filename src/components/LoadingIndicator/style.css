@@ -1,0 +1,9 @@
+.load-indicator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.load-indicator * {
+    color: #d4d2bd;
+}

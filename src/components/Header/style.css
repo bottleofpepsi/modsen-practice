@@ -1,31 +1,31 @@
-header {
+.search-header {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     gap: 30px;
-    padding: 40px 10px;
-    background-image: linear-gradient(#000000b2, #000000b2),
+    background: linear-gradient(#000000b2, #000000b2),
         url(../../assets/header-bg.jpg);
     background-position: 40%;
+    padding: 40px 10px;
 }
 
-header h1 {
-    color: #ffffff;
+.search-header h1 {
     margin: 0;
+    color: #ffffff;
+    font-weight: 900;
     font-size: 48px;
     font-family: "Montserrat";
-    font-weight: 900;
 }
 
 .search-field {
     flex-grow: 1;
-    height: 40px;
+    border: none;
     padding: 0 10px;
+    height: 40px;
+    font-weight: 500;
     font-size: 16px;
     font-family: "Montserrat";
-    font-weight: 500;
-    border: none;
 }
 
 .search-field:focus {
@@ -34,13 +34,13 @@ header h1 {
 
 .search-button {
     display: flex;
-    align-items: center;
     justify-content: center;
-    padding-right: 10px;
-    width: 40px;
-    aspect-ratio: 1/1;
+    align-items: center;
     border: none;
     background-color: #ffffff;
+    padding-right: 10px;
+    aspect-ratio: 1/1;
+    width: 40px;
 }
 
 .search-button:hover {
@@ -53,13 +53,25 @@ header h1 {
 
 .search-bar {
     display: flex;
-    width: clamp(350px, 70%, 600px);
-    background-color: #ffffff;
-    overflow: hidden;
-    border-radius: 10px;
     transition: ease 0.5s;
+    border-radius: 10px;
+    background-color: #ffffff;
+    width: clamp(350px, 70%, 600px);
+    overflow: hidden;
 }
 
 .search-bar:focus-within {
     box-shadow: 0px 0px 8px #ffffff;
+}
+
+.filter-panel {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 20px;
+}
+
+@media (max-width: 500px) {
+    .filter-panel {
+        flex-direction: column-reverse;
+    }
 }

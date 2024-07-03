@@ -4,20 +4,16 @@ import React, { useState } from "react";
 import { FaAngleDown, FaAngleUp } from "react-icons/fa6";
 
 import useVisible from "../../hooks/useVisible";
+import DropdownItem from "./DropdownItem";
+import { Props } from "./types";
 
-type Props = {
-    items: {
-        id: number;
-        value: string;
-    }[];
-};
-
-function DropdownMenu({ items }: Props) {
+function DropdownMenu({ setParameter, items }: Props) {
     const [ref, visible, setVisible] = useVisible<HTMLDivElement>(false);
-    const [value, setValue] = useState(items[0].value);
+    const [name, setName] = useState(items[0].name);
 
-    const chooseItem = (name: string) => {
-        setValue(name);
+    const chooseItem = (itemName: string, itemValue: string) => {
+        setName(itemName);
+        setParameter(itemValue);
         setVisible(false);
     };
 
@@ -27,32 +23,19 @@ function DropdownMenu({ items }: Props) {
                 className="dropdown-button"
                 onClick={() => setVisible(!visible)}
             >
-                <span className="dropdown-text">{value}</span>
+                <span className="dropdown-text">{name}</span>
                 {visible ? <FaAngleUp /> : <FaAngleDown />}
             </div>
             <ul className={`dropdown-list ${visible ? "" : "hidden"}`}>
                 {items.map((item) => (
                     <DropdownItem
                         key={item.id}
-                        name={item.value}
-                        callback={chooseItem}
+                        itemDetails={item}
+                        onItemClicked={chooseItem}
                     />
                 ))}
             </ul>
         </div>
-    );
-}
-
-type ItemProps = {
-    name: string;
-    callback: (x: string) => void;
-};
-
-function DropdownItem({ name, callback }: ItemProps) {
-    return (
-        <li className="dropdown-item" onClick={() => callback(name)}>
-            <span>{name}</span>
-        </li>
     );
 }
 

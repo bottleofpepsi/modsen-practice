@@ -1,28 +1,8 @@
 .results {
-    width: auto;
-    padding: 10px 20px;
     display: grid;
+    grid-template-columns: repeat(auto-fit, 200px);
     justify-content: center;
-    grid-template-columns: repeat(auto-fit, 250px);
     gap: 20px 30px;
-}
-
-/* @media (max-width: 1000px) {
-    .results {
-        grid-template-columns: repeat(auto-fit, 200px);
-    }
-} */
-
-.result-count {
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.result-count-text {
-    margin: 0;
-    font-size: 24px;
-    font-family: "Montserrat", sans-serif;
-    font-weight: 500;
+    padding: 10px 20px;
+    width: auto;
 }

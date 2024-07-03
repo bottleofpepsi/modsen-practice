@@ -1,10 +1,9 @@
 import "./style.css";
 
-import React, { ReactNode, useState } from "react";
+import React from "react";
 
-type Props = {
-    children: ReactNode;
-};
+import ResultCount from "./ResultCount";
+import { Props } from "./types";
 
 function SearchResults({ children }: Props) {
     return (
@@ -12,16 +11,6 @@ function SearchResults({ children }: Props) {
             <ResultCount />
             <main className="results">{children}</main>
         </>
-    );
-}
-
-function ResultCount() {
-    const [count] = useState(0);
-
-    return (
-        <section className="result-count">
-            <span className="result-count-text">Found {count} books</span>
-        </section>
     );
 }
 
