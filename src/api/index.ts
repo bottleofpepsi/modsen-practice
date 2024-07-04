@@ -1,4 +1,4 @@
-import { Books, DetailedBook, SearchParams } from "../types";
+import { Books, DetailedBook, SearchParams } from "@/types";
 
 interface Keyable {
     [key: string]: Keyable;

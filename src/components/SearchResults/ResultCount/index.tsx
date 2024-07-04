@@ -2,7 +2,7 @@ import "./style.css";
 
 import React, { useContext } from "react";
 
-import { BookCountContext } from "../../../pages/SearchPage";
+import { BookCountContext } from "@/pages/SearchPage";
 
 function ResultCount() {
     const count = useContext(BookCountContext);

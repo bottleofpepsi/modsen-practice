@@ -3,15 +3,15 @@ import "./style.css";
 import React, { createContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-import { fetchBooksByQuery } from "../../api";
-import BookCard from "../../components/BookCard";
-import Header from "../../components/Header";
-import LoadingIndicator from "../../components/LoadingIndicator";
-import LoadMoreButton from "../../components/LoadMoreButton";
-import SearchResults from "../../components/SearchResults";
-import { PAGINATION_STEP } from "../../constants";
-import { Book, Books, SearchParams } from "../../types";
-import { filterBooks } from "../../utils";
+import { fetchBooksByQuery } from "@/api";
+import BookCard from "@/components/BookCard";
+import Header from "@/components/Header";
+import LoadingIndicator from "@/components/LoadingIndicator";
+import LoadMoreButton from "@/components/LoadMoreButton";
+import SearchResults from "@/components/SearchResults";
+import { PAGINATION_STEP } from "@/constants";
+import { Book, Books, SearchParams } from "@/types";
+import { filterBooks } from "@/utils";
 
 export const BookCountContext = createContext(0);
 export const SetIndexContext = createContext(() => {});
