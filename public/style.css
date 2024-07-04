@@ -48,6 +48,12 @@
     font-style: italic;
 }
 
+:root {
+    --main-bg-color: #F0F0F0;
+    --emph-bg-color: #D4D2BD;
+    --emph-bg-color-darker: #C2BE8C;
+}
+
 html {
     overscroll-behavior: none;
     scroll-behavior: smooth;
@@ -56,7 +62,7 @@ html {
 body {
     margin: 0;
     padding: 0;
-    background-color: #F0F0F0;
+    background-color: var(--main-bg-color);
 }
 
 .hidden {
