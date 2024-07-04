@@ -2,7 +2,8 @@ import "./style.css";
 
 import React from "react";
 
-import placeholder from "../../assets/placeholder.jpg";
+import placeholder from "@/assets/placeholder.jpg";
+
 import { Props } from "./types";
 
 function BookCard({ bookInfo }: Props) {

@@ -3,7 +3,8 @@ import "./style.css";
 import React, { KeyboardEvent } from "react";
 import { IoIosSearch } from "react-icons/io";
 
-import { filterValues, sortingValues } from "../../constants";
+import { filterValues, sortingValues } from "@/constants";
+
 import DropdownMenu from "../DropdownMenu";
 import { Props } from "./types";
 

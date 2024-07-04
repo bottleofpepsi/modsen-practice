@@ -1,4 +1,4 @@
-import { SearchParams } from "../../types";
+import { SearchParams } from "@/types";
 
 export type Props = {
     params: SearchParams;

@@ -3,7 +3,8 @@ import "./style.css";
 import React, { useState } from "react";
 import { FaAngleDown, FaAngleUp } from "react-icons/fa6";
 
-import useVisible from "../../hooks/useVisible";
+import useVisible from "@/hooks/useVisible";
+
 import DropdownItem from "./DropdownItem";
 import { Props } from "./types";
 

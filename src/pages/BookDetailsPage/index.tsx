@@ -3,11 +3,11 @@ import "./style.css";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-import { fetchBookById } from "../../api";
-import LoadingIndicator from "../../components/LoadingIndicator";
-import ReturnButton from "../../components/ReturnButton";
-import { DetailedBook } from "../../types";
-import { getDateFromString, setDelimeter, uniqueCategories } from "../../utils";
+import { fetchBookById } from "@/api";
+import LoadingIndicator from "@/components/LoadingIndicator";
+import ReturnButton from "@/components/ReturnButton";
+import { DetailedBook } from "@/types";
+import { getDateFromString, setDelimeter, uniqueCategories } from "@/utils";
 
 function BookDetailsPage() {
     const { id } = useParams();
