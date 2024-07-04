@@ -74,7 +74,7 @@ span {
 }
 
 @media (hover: none) {
-    .details-page-book-info-description:active {
+    .details-page-book-info-description {
         overflow-y: scroll;
     }
 }
