@@ -37,7 +37,7 @@ function BookDetailsPage() {
 
     return (
         <main className="details-page">
-            <nav className="details-nav">
+            <nav className="details-page-nav">
                 <ReturnButton />
             </nav>
             {isLoading && <LoadingIndicator />}
@@ -45,7 +45,11 @@ function BookDetailsPage() {
                 style={isLoading ? { display: "none" } : {}}
                 className="details-page-book"
             >
-                <img src={imageLink} onLoad={imageLoaded} />
+                <img
+                    className="details-page-book-image"
+                    src={imageLink}
+                    onLoad={imageLoaded}
+                />
                 <div className="details-page-book-info">
                     <header className="details-page-book-info-header">
                         <h1 className="details-page-book-info-title">
@@ -68,7 +72,9 @@ function BookDetailsPage() {
                             <p>Publisher: {bookDetails.publisher}</p>
                         )}
                         {bookDetails.allCategories && (
-                            <p>{uniqueCategories(bookDetails.allCategories)}</p>
+                            <p className="details-page-book-info-categories">
+                                {uniqueCategories(bookDetails.allCategories)}
+                            </p>
                         )}
                         {bookDetails.pageCount && (
                             <p>Page count: {bookDetails.pageCount}</p>

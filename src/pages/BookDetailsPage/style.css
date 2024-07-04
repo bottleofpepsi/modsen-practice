@@ -6,9 +6,9 @@ span {
 .details-page {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 20px;
-    padding: 20px 100px;
-    height: calc(100vh - 40px);
+    padding: 20px 0;
     min-height: 500px;
     font-family: "Montserrat", sans-serif;
 }
@@ -17,13 +17,22 @@ span {
     display: flex;
     flex-grow: 1;
     border-radius: 20px;
-    background-color: #d4d2bd;
+    background-color: var(--emph-bg-color);
+    width: 90vw;
+    height: calc(100vh - 100px);
     overflow: hidden;
+}
+
+.details-page-nav {
+    width: 90vw;
+}
+
+.details-page-book-image {
+    height: calc(100vh - 100px);
 }
 
 .details-page-book-info {
     display: flex;
-    flex-grow: 2;
     flex-direction: column;
     gap: 20px;
     padding: 20px 30px;
@@ -41,8 +50,8 @@ span {
 }
 
 .details-page-book-info-description {
-    max-width: 700px;
-    overflow: scroll;
+    padding-right: 15px;
+    overflow: hidden;
     font-weight: 500;
     font-size: 20px;
 }
@@ -51,4 +60,56 @@ span {
     display: flex;
     flex-direction: column;
     gap: 10px;
+}
+
+.details-page-book-info-categories {
+    max-height: 3lh;
+    overflow: hidden;
+}
+
+@media (hover: hover) {
+    .details-page-book-info-description:hover {
+        overflow-y: scroll;
+    }
+}
+
+@media (hover: none) {
+    .details-page-book-info-description:active {
+        overflow-y: scroll;
+    }
+}
+
+@media (max-width: 1000px) {
+    .details-page-nav {
+        width: auto;
+    }
+
+    .details-page-book {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        background-color: var(--main-bg-color);
+        height: inherit;
+    }
+
+    .details-page-book-image {
+        border-radius: 10px;
+        max-width: 90vw;
+        max-height: 60vh;
+    }
+
+    .details-page-book-info-title {
+        font-size: 24px;
+    }
+
+    .details-page-book-info {
+        border-radius: 20px;
+        background-color: var(--emph-bg-color);
+        padding: 20px;
+    }
+
+    .details-page-book-info-description {
+        max-height: 10lh;
+        font-size: 16px;
+    }
 }

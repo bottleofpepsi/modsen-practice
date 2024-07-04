@@ -4,7 +4,7 @@
     align-items: center;
     border: 1px solid #505050;
     border-radius: 10px;
-    background-color: #d4d2bd;
+    background-color: var(--emph-bg-color);
     padding: 0 20px;
     width: 150px;
     height: 40px;
@@ -15,5 +15,5 @@
 
 .custom-button:hover {
     cursor: pointer;
-    background-color: #c2be8c;
+    background-color: var(--emph-bg-color-darker);
 }
