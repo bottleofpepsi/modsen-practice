@@ -8,7 +8,7 @@ import { Props } from "./types";
 function BookCard({ bookInfo }: Props) {
     const processedAutors = bookInfo.authors?.join(", ");
     const thumbnailLink = bookInfo.thumbnailLink?.replace(/^http/g, "https");
-    
+
     return (
         <article className="book-card">
             <img

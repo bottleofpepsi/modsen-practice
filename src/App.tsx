@@ -1,9 +1,9 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 
+import ErrorBoundary from "./components/ErrorBoundary";
 import BookDetailsPage from "./pages/BookDetailsPage";
 import SearchPage from "./pages/SearchPage";
-import ErrorBoundary from "./utils/ErrorBoundary";
 
 function App() {
     return (
