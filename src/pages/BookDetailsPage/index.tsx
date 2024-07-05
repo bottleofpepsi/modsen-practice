@@ -56,15 +56,11 @@ function BookDetailsPage() {
                             {bookDetails.title}
                         </h1>
                         <span className="details-page-book-info-authors-date">
-                            {bookDetails.authors &&
-                                setDelimeter(bookDetails.authors, ", ")}
+                            {setDelimeter(bookDetails.authors, ", ")}
                             {bookDetails.authors &&
                                 bookDetails.publishedDate &&
                                 ", "}
-                            {bookDetails.publishedDate &&
-                                getDateFromString(
-                                    bookDetails.publishedDate
-                                )?.[0]}
+                            {getDateFromString(bookDetails.publishedDate)?.[0]}
                         </span>
                     </header>
                     <div className="details-page-book-info-properties">

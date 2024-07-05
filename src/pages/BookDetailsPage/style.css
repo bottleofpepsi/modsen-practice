@@ -9,7 +9,7 @@ span {
     align-items: center;
     gap: 20px;
     padding: 20px 0;
-    min-height: 500px;
+    min-height: 360px;
     font-family: "Montserrat", sans-serif;
 }
 
@@ -28,6 +28,7 @@ span {
 }
 
 .details-page-book-image {
+    min-height: 300px;
     height: calc(100vh - 100px);
 }
 
