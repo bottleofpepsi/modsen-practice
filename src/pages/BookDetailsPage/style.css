@@ -80,8 +80,8 @@ span {
 }
 
 @media (max-width: 1000px) {
-    .details-page-nav {
-        width: auto;
+    .details-page-nav > button {
+        width: 100%;
     }
 
     .details-page-book {

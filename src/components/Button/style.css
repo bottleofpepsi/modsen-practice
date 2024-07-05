@@ -1,6 +1,6 @@
 .custom-button {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     border: 1px solid #505050;
     border-radius: 10px;
